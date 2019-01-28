@@ -24,22 +24,7 @@ The core library keyframe_bundle_adjustment is a backend that should faciliate t
 * Limo2 on KITTI is LIDAR with monocular Visual Odometry, supported with groundplane constraint.
 
 ## Details
-This work was accepted on IROS 2018.
-See https://arxiv.org/pdf/1807.07524.pdf .
 
-If you refer to this work please cite:
-
-@inproceedings{graeter2018limo,
-  title={LIMO: Lidar-Monocular Visual Odometry},
-  author={Graeter, Johannes and Wilczynski, Alexander and Lauer, Martin},
-  booktitle={2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  pages={7872--7879},
-  year={2018},
-  organization={IEEE}
-}
-
-Please note that LIMO2 differs from the publication. 
-We enhanced the speed a little and added additional groundplane reconstruction for pure monocular visual odometry and a combination of scale from LIDAR and the groundplane (best performing on KITTI).
 
 ## Installation
 
