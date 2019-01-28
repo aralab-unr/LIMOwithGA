@@ -1,5 +1,6 @@
 <launch>
   <!--must be set before launchfile starts-->
+  <arg name="rviz" default="true" />
   <rosparam param="use_sim_time" subst_value="True"> true </rosparam>
 
   <!-- <arg name="nodelet_manager_name" default="global_nodelet_manager"/>
@@ -58,4 +59,7 @@
   
   <!-- play rosbag with clock -->
   <!-- /mrtstorage/datasets/kitti/odometry/odometry_rosbags/gray/00.bag"-->
+  <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find demo_keyframe_bundle_adjustment_meta)/res/default.rviz" />
+  </group>
 </launch>
