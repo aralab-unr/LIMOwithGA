@@ -7,8 +7,8 @@ general:
 
 # viso2::Matcher params and tracker config
 matcher:
-  nms_n: 7
-  nms_tau: 20
+  nms_n: 7 #default - 7
+  nms_tau: 20 #default - 20
   match_binsize: 200
   match_radius: 400
   outlier_flow_tolerance: 4
