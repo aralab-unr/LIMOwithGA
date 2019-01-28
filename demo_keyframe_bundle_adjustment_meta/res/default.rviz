@@ -144,7 +144,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /debug/matches_left/with_outlier_label
+      Image Topic: /sensor/camera/color/right/image_rect
       Max Value: 1
       Median window: 5
       Min Value: 0
