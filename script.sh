@@ -16,7 +16,8 @@ cd ..
 cd ..
 catkin_make
 source devel_limo_release/setup.bash
-roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
+#gnome-terminal --tab --title="run rosbag" --command="roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch;" --tab --title="run node" --command="cd; rosbag play 04.bag --pause --clock;"
+#roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
 
 
 
@@ -24,7 +25,7 @@ roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
 #sudo rm -r catkin_workspace
 
 # roscore initialization
-# 
+# ros bag download
 
 
 
