@@ -70,7 +70,12 @@ Follow the below github repository to install GA library
 https://github.com/chovanecm/python-genetic-algorithm
 ```
 * groundtruth file: 
-download groundtruth file from below link and place it in /tmp directory of your system
+download groundtruth file from this github and place it in /tmp directory of your system
+```shell
+https://github.com/adarshsehgal/LIMOwithGA/blob/master/groundtruth_04.txt
+```
+* KITTI bag file: 
+download KITTI bag file from below link and place it in same directory as ga.py and script.sh
 ```shell
 https://www.mrt.kit.edu/graeterweb/04.bag
 ```
