@@ -25,6 +25,10 @@ The core library keyframe_bundle_adjustment is a backend that should faciliate t
 
 ## Details
 
+limo reference: 
+```shell
+ https://github.com/johannes-graeter/limo
+ ```
 
 ## Installation
 
@@ -70,58 +74,23 @@ download groundtruth file from below link and place it in /tmp directory of your
 ```shell
 https://www.mrt.kit.edu/graeterweb/04.bag
 ```
+* install evo package: 
+```shell
+pip install evo --upgrade --no-binary evo
+```
+* make sure scripts are accessible: 
+```shell
+sudo chmod 777 script.sh
+sudo chmod 777 fitness_value_scipt.sh
+```
 
-
-### Build
-
-* initiate a catkin workspace:
-    ```shell 
-    cd ${your_catkin_workspace}
-    catkin init
-    ```
-
-* clone limo into src of workspace:
-    ```shell 
-    mkdir ${your_catkin_workspace}/src
-    cd ${your_catkin_workspace}/src
-    git clone https://github.com/johannes-graeter/limo.git
-    ```
-
-* clone dependencies and build repos
-    ```shell 
-    cd ${your_catkin_workspace}/src/limo
-    bash install_repos.sh
-    ```
-
-* unittests:
-    ```shell 
-    cd ${your_catkin_workspace}/src/limo
-    catkin run_tests --this --profile limo_release
-    ```
-    
 ### Run
-* get test data from [https://www.mrt.kit.edu/graeterweb/04.bag](https://www.mrt.kit.edu/graeterweb/04.bag)
-    1. this is a bag file generated from Kitti sequence 04 with added semantic labels.
-    2. there is more under the same address all named ??.bag (supported: 00.bag, 01.bag, 04.bag)
-
 * in different terminals
     1. `roscore`
-    2. `rosbag play 04.bag -r 0.1 --pause --clock`
-    3. ```shell
-       source ${your_catkin_workspace}/devel_limo_release/setup.sh
-       roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
+    2. ```shell
+       sudo python3 ga.py
        ```
-    4. unpause rosbag (hit space in terminal)
-    5. `rviz ${your_catkin_workspace}/src/demo_keyframe_bundle_adjustment_meta/res/default.rviz`
-
-* watch limo trace the trajectory in rviz :)
-* Before submitting an issue, please have a look at the section [Known issues](#known-issues).
-
-### Todo
-
-* runtime is ok for individual modules, however communication between nodes must be enhanced to ensure online usage (nodelets...). 
-* Make it overall faster.
-* Test on our own test car.
+* watch ga trying out different parameter values and limo traces the trajectory in rviz :)
 
 ### Try it out
 
