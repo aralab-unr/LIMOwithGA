@@ -43,7 +43,7 @@
 
     <param name="max_solver_time" value="0.4"/>
     <param name="robust_loss_reprojection_thres" value="1.6"/>
-    <param name="outlier_rejection_quantile" value="0.95"/>
+    <param name="outlier_rejection_quantile" value="0.95"/> <!-- default = 0.95-->
     <param name="outlier_rejection_num_iterations" value="1"/>
     <param name="shrubbery_weight" value="0.9"/>
 

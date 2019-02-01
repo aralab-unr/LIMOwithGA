@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 timesEvaluated = 0
-bestepochs = -1
+bestrmse = -1
 
 # First, define function that will be used to evaluate the fitness
 def fitness_function(genome):
@@ -15,68 +15,45 @@ def fitness_function(genome):
     print("Fitness function invoked "+str(timesEvaluated)+" times")
 
     #setting parameter values using genome
-    polyak = decode_function(genome[0:10])
-    if polyak > 1:
-        polyak = 1
-    gamma = decode_function(genome[11:21])
-    if gamma > 1:
-        gamma = 1
-    Q_lr = decode_function(genome[22:33])
-    if Q_lr > 1:
-        Q_lr = 1
-    pi_lr = decode_function(genome[34:44])
-    if pi_lr > 1:
-        pi_lr = 1
-    random_eps = decode_function(genome[45:55])
-    if random_eps > 1:
-        random_eps = 1
-    noise_eps = decode_function(genome[56:66])
-    if noise_eps > 1:
-        noise_eps = 1
-    epochs_default = 50 #80
-    env = 'FetchSlide-v1'
-    logdir ='/tmp/openaiGA'
-    num_cpu = 4
+    # outlier_rejection_quantile in keyframe_ba_monolid.launch
+    out_rej_quant = decode_function(genome[0:10])
+    if out_rej_quant > 1:
+        out_rej_quant = 1
 
-    query = "python3 -m baselines.her.experiment.train --env="+env+" --logdir="+logdir+" --n_epochs="+str(epochs_default)+" --num_cpu="+str(num_cpu) + " --polyak_value="+ str(polyak) + " --gamma_value=" + str(gamma) + " --q_learning=" + str(Q_lr) + " --pi_learning=" + str(pi_lr) + " --random_epsilon=" + str(random_eps) + " --noise_epsilon=" + str(noise_eps)
+    print('Saving parameter 1 to file...')
+    with open('out_rej_quant.txt', 'w') as output:
+        output.write(str(out_rej_quant)) 
 
-    print(query)
-    #calling training to calculate number of epochs required to reach close to maximum success rate
-    os.system(query)
-    #epochs = train.launch(env, logdir, epochs_default, num_cpu, 0, 'future', 5, 1, polyak, gamma)
-    #env, logdir, n_epochs, num_cpu, seed, replay_strategy, policy_save_interval, clip_return   
+    query = "./script.sh"
 
-    file = open('epochs.txt', 'r')
+    #calling limo to calculate rmse value
+    os.system(query)     
 
-    #one run is expected to converge before epochs_efault
-    #if it does not converge, either add condition here, or make number of epochs as dynamic
+    # read fitness value as root mean square value (rmse) from text file
+    file = open('rmse.txt', 'r')
+    rmse = int(file.read())
 
-    epochs = int(file.read())
-
-    if epochs == None:
-        epochs = epochs_default
-
-    global bestepochs
-    if bestepochs == -1:
-        bestepochs = epochs
-    if epochs < bestepochs:
-        bestepochs = epochs
+    global bestrmse
+    if bestrmse == -1:
+        bestrmse = rmse
+    if rmse < bestrmse:
+        bestrmse = rmse
         with open('BestParameters.txt', 'a') as output:
-            output.write("Epochs taken to converge : " + str(bestepochs) + "\n")
-            output.write("Tau = " + str(polyak) + "\n")
-            output.write("Gamma = " + str(gamma) + "\n")
-            output.write("Q_learning = " + str(Q_lr) + "\n")
-            output.write("pi_learning = " + str(pi_lr) + "\n")
-            output.write("random_epsilon = " + str(random_eps) + "\n")
-            output.write("noise_epsilon = " + str(noise_eps) + "\n")
-            output.write("\n")
+            output.write("Best rmse value : " + str(bestrmse) + "\n")
+            output.write("outlier_rejection_quantile = " + str(out_rej_quant) + "\n")
+            #output.write("Gamma = " + str(gamma) + "\n")
+            #output.write("Q_learning = " + str(Q_lr) + "\n")
+            #output.write("pi_learning = " + str(pi_lr) + "\n")
+            #output.write("random_epsilon = " + str(random_eps) + "\n")
+            #output.write("noise_epsilon = " + str(noise_eps) + "\n")
+            #output.write("\n")
             output.write("=================================================")
             output.write("\n")
 
-    print('EPOCHS taken to converge:' + str(epochs))
+    print('rmse for this run:' + str(rmse))
 
-    print("Best epochs so far : "+str(bestepochs))
-    return 1/epochs
+    print("Best rmse so far : "+str(bestrmse))
+    return 1/rmse
 
 def decode_function(genome_partial):
 
@@ -90,7 +67,7 @@ def decode_function(genome_partial):
 
 # Configure the algorithm:
 population_size = 30
-genome_length = 66
+genome_length = 11
 ga = GeneticAlgorithm(fitness_function)
 ga.generate_binary_population(size=population_size, genome_length=genome_length)
 
