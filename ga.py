@@ -31,7 +31,9 @@ def fitness_function(genome):
 
     # read fitness value as root mean square value (rmse) from text file
     file = open('/tmp/rmse_output.txt', 'r')
-    rmse = int(file.read())
+    rmse = float(file.read())
+
+    os.system("rm -f /tmp/rmse_output.txt")
 
     global bestrmse
     if bestrmse == -1:

@@ -18,12 +18,25 @@ cd ..
 catkin_make
 source devel_limo_release/setup.bash
 #gnome-terminal --tab --command="roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch;" --tab --command="rosbag play 04.bag --pause --clock;"
-roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
-
-
+#roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
 
 # delete workspace after this iteration is done
-#sudo rm -r catkin_workspace
+cd /tmp
+rm -r -f catkin_workspace
+
+# find fitness value by using evo package and comparing with ground truth
+mkdir results
+evo_ape kitti groundtruth_04.txt poses_dump.txt -va --plot_mode xz --save_results results/fitness.zip
+cd results
+unzip fitness.zip -d fitness
+cd fitness
+val=( $(jq '.rmse' stats.json))
+echo $val >> /tmp/rmse_output.txt
+cd ..
+cd ..
+rm -r -f results
+
+
 
 # roscore initialization DONE
 # ros bag download and where to put it DONE
