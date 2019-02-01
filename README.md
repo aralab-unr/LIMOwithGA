@@ -87,7 +87,12 @@ sudo chmod 777 fitness_value_scipt.sh
 ### Run
 * in different terminals
     1. `roscore`
-    2. ```shell
+    2. Download only below files to your computer to run the code, rest is taken care:
+	```shell
+       ga.py
+       script.sh
+       ```
+    3. ```shell
        sudo python3 ga.py
        ```
 * watch ga trying out different parameter values and limo traces the trajectory in rviz :)
