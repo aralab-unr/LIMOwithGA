@@ -21,8 +21,8 @@ def fitness_function(genome):
         out_rej_quant = 1
 
     print('Saving parameter 1 to file...')
-    with open('out_rej_quant.txt', 'w') as output:
-        output.write(str(out_rej_quant)) 
+    with open('params.yaml', 'w') as output:
+        output.write("out_rej_quant: "+str(out_rej_quant)) 
 
     query = "./script.sh"
 
@@ -96,12 +96,12 @@ best_genome, best_fitness = ga.get_best_genome()
 print("BEST CHROMOSOME IS")
 print(best_genome)
 print("It's decoded value is")
-print("Tau = " + str(decode_function(best_genome[0:10])))
-print("Gamma = " + str(decode_function(best_genome[11:22])))
-print("Q_learning = " + str(decode_function(best_genome[23:33])))
-print("pi_learning = " + str(decode_function(best_genome[34:44])))
-print("random_epsilon = " + str(decode_function(best_genome[45:55])))
-print("noise_epsilon = " + str(decode_function(best_genome[56:66])))
+print("outlier_rejection_quantile = " + str(decode_function(best_genome[0:10])))
+#print("Gamma = " + str(decode_function(best_genome[11:22])))
+#print("Q_learning = " + str(decode_function(best_genome[23:33])))
+#print("pi_learning = " + str(decode_function(best_genome[34:44])))
+#print("random_epsilon = " + str(decode_function(best_genome[45:55])))
+#print("noise_epsilon = " + str(decode_function(best_genome[56:66])))
 
 # If you want, you can have a look at the population:
 population = ga.population

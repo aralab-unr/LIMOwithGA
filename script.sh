@@ -27,6 +27,9 @@ roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
 # roscore initialization
 # ros bag download and where to put it
 # make sure to do chmod 777 script.sh
+# instructions to install GA
+# params.yaml path may need to be modified in keyframs_ba_monolid.launch file - set to dynamic path
+# remove params file after one evaluation
 
 
 
