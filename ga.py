@@ -20,9 +20,9 @@ def fitness_function(genome):
     if out_rej_quant > 1:
         out_rej_quant = 1
 
-    print('Saving parameter 1 to file...')
+    print('Saving parameters to params.yaml...')
     with open('params.yaml', 'w') as output:
-        output.write("out_rej_quant: "+str(out_rej_quant)) 
+        output.write("out_rej_quant: " + str(out_rej_quant) + "\n") 
 
     query = "./script.sh"
 

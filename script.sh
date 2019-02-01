@@ -30,6 +30,7 @@ roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
 # instructions to install GA
 # params.yaml path may need to be modified in keyframs_ba_monolid.launch file - set to dynamic path
 # remove params file after one evaluation
+# verify if launch file is reading parameters from params.yaml file
 
 
 
