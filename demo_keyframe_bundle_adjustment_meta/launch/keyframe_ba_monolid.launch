@@ -2,8 +2,8 @@
   <arg name="config" default="$(find keyframe_bundle_adjustment_ros_tool)/launch/params/mono_lidar_parameters.yaml" />
   <arg name="prior_vehicle_frame" default=""/> <!--if empty internal prior will be used-->
   <arg name="tracklets_subscriber_topic" default="/tracklets_depth/tracklets/left/with_outlier_label"/>
-  <arg name="params_yaml_path" default="/home/labuser/params.yaml"/>
-  <arg name="out_rej_quant" default="0.95"/>
+  <!-- <arg name="params_yaml_path" default="/tmp/params.yaml"/>
+  <arg name="out_rej_quant" default="0"/> -->
 
 <!-- 
   <arg name="start_nodelet_manager" default="true"/>
@@ -47,8 +47,10 @@
     <param name="max_solver_time" value="0.4"/>
     <param name="robust_loss_reprojection_thres" value="1.6"/>
 
-    <rosparam command="load" file="$(arg params_yaml_path)" />
-    <param name="outlier_rejection_quantile" value="$(arg out_rej_quant)"/> 
+    <!-- <rosparam command="load" file="$(arg params_yaml_path)" />
+    <param name="outlier_rejection_quantile" value="$(arg out_rej_quant)"/> -->
+
+    <param name="config" value="/home/labuser/params.yaml" />
 
     <param name="outlier_rejection_num_iterations" value="1"/>
     <param name="shrubbery_weight" value="0.9"/>

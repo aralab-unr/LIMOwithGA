@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # make a new ROS workspace to test the parameters
+cd /tmp
 mkdir catkin_workspace
 cd catkin_workspace
 mkdir src
@@ -28,9 +29,13 @@ roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
 # ros bag download and where to put it
 # make sure to do chmod 777 script.sh
 # instructions to install GA
-# params.yaml path may need to be modified in keyframs_ba_monolid.launch file - set to dynamic path
+# params.yaml path may need to be modified in keyframs_ba_monolid.launch file - set to dynamic path DONE
 # remove params file after one evaluation
-# verify if launch file is reading parameters from params.yaml file
+# verify if launch file is reading parameters from params.yaml file - IMPORTANT
+# add steps to install evo package to find fitness value
+# place ground truth file at proper destination /tmp/
+# delete results folder after finding fitness value\
+# install jq
 
 
 

@@ -56,6 +56,21 @@ sudo apt-get install ros-kinetic-opencv-apps
 ```shell
 sudo apt-get install git
 ```
+* install jq: 
+```shell
+sudo apt-get install jq
+```
+* install Genetic Algorithm (GA):
+Follow the below github repository to install GA library 
+```shell
+https://github.com/chovanecm/python-genetic-algorithm
+```
+* groundtruth file: 
+download groundtruth file from below link and place it in /tmp directory of your system
+```shell
+https://www.mrt.kit.edu/graeterweb/04.bag
+```
+
 
 ### Build
 
