@@ -19,6 +19,7 @@ catkin_make
 source devel_limo_release/setup.bash
 #gnome-terminal --tab --command="roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch;" --tab --command="rosbag play 04.bag --pause --clock;"
 #roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
+cd ..
 parallel < commands.txt --no-notice
 
 # delete workspace after this iteration is done

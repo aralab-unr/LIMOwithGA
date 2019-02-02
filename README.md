@@ -70,18 +70,27 @@ Follow the below github repository to install GA library
 https://github.com/chovanecm/python-genetic-algorithm
 ```
 * groundtruth file: 
-download groundtruth file from this github and place it in /tmp directory of your system
+download groundtruth pose file from this github and place it in /tmp directory of your system
 ```shell
 https://github.com/adarshsehgal/LIMOwithGA/blob/master/groundtruth_04.txt
 ```
+* commands file: 
+download commands file from this github and place it in /tmp directory of your system
+```shell
+https://github.com/adarshsehgal/LIMOwithGA/blob/master/commands.txt
+```
 * KITTI bag file: 
-download KITTI bag file from below link and place it in same directory as ga.py and script.sh
+download KITTI bag file from below link and place it in /tmp directory of your system
 ```shell
 https://www.mrt.kit.edu/graeterweb/04.bag
 ```
 * install evo package: 
 ```shell
 pip install evo --upgrade --no-binary evo
+```
+* install parallel package: 
+```shell
+sudo apt install parallel
 ```
 * make sure scripts are accessible: 
 ```shell
@@ -96,6 +105,9 @@ sudo chmod 777 fitness_value_scipt.sh
 	```shell
        ga.py
        script.sh
+       commands.txt
+       groundtruth_04.txt
+       04.bag
        ```
     3. ```shell
        sudo python3 ga.py
