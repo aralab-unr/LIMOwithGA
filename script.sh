@@ -20,7 +20,7 @@ source devel_limo_release/setup.bash
 #gnome-terminal --tab --command="roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch;" --tab --command="rosbag play 04.bag --pause --clock;"
 #roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
 cd ..
-parallel < commands.txt --no-notice
+timeout 290 parallel < commands.txt --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
@@ -51,7 +51,7 @@ rm -r -f results
 # place ground truth file at proper destination /tmp/ DONE
 # delete results folder after finding fitness value\ DONE
 # install jq DONE
-# sudo apt install parallel
+# sudo apt install parallel DONE
 
 
 
