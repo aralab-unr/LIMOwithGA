@@ -2,7 +2,7 @@
 
 Lidar-Monocular Visual Odometry.
 This library is designed to be an open platform for visual odometry algortihm development.
-We focus explicitely on the simple integration of the following key methodologies:
+LIMO focuses explicitely on the simple integration of the following key methodologies:
 
 * Keyframe selection
 * Landmark selection
@@ -20,7 +20,7 @@ The core library keyframe_bundle_adjustment is a backend that should faciliate t
   * Difference in time
   * Difference in motion
 
-* We use this library for combining Lidar with monocular vision.
+* This library is used for combining Lidar with monocular vision.
 * Limo2 on KITTI is LIDAR with monocular Visual Odometry, supported with groundplane constraint.
 
 ## Details
@@ -113,16 +113,6 @@ sudo chmod 777 fitness_value_scipt.sh
        sudo python3 ga.py
        ```
 * watch ga trying out different parameter values and limo traces the trajectory in rviz :)
-
-### Try it out
-
-If you just want to give it a quick peek, I prepared a ready-to-use virtualbox image (packed with Ubuntu 16.04.04, ros kinetic and all dependencies for limo).
-
-* download it from [https://www.mrt.kit.edu/graeterweb/limo_full.ova](https://www.mrt.kit.edu/graeterweb/limo_full.ova).
-* Password for the vm-image is "1234".
-* Find all modules in ~/workspaces/limo/ .
-* Run example (~/04.bag) as described above.
-* Note that the runtime in the virtual machine is slower than on a normal system.
 
 ## Known issues
 * Unittest of LandmarkSelector.voxel fails with libpcl version 1.7.2 or smaller (just 4 landmarks are selected). 
