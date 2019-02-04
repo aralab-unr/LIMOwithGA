@@ -59,7 +59,7 @@
   
   <!-- play rosbag with clock -->
   <!-- /mrtstorage/datasets/kitti/odometry/odometry_rosbags/gray/00.bag"-->
-  <!-- <group if="$(arg rviz)">
+  <group if="$(arg rviz)">
     <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find demo_keyframe_bundle_adjustment_meta)/res/default.rviz" /> 
-  </group> -->
+  </group>
 </launch>
