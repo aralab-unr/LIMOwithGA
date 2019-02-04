@@ -40,7 +40,7 @@ def fitness_function(genome):
         bestrmse = rmse
     if rmse < bestrmse:
         bestrmse = rmse
-        with open('BestParameters.txt', 'a') as output:
+        with open('/tmp/BestParameters.txt', 'a') as output:
             output.write("Best rmse value : " + str(bestrmse) + "\n")
             output.write("outlier_rejection_quantile = " + str(out_rej_quant) + "\n")
             #output.write("Gamma = " + str(gamma) + "\n")

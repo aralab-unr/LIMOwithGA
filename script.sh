@@ -20,7 +20,8 @@ source devel_limo_release/setup.bash
 #gnome-terminal --tab --command="roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch;" --tab --command="rosbag play 04.bag --pause --clock;"
 #roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
 cd ..
-timeout 290 parallel < commands.txt --no-notice 
+echo "Running LIMO with rosbag..."
+timeout 293 parallel < commands.txt --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
@@ -38,20 +39,8 @@ cd ..
 cd ..
 rm -r -f results
 
+# add other parameters to GA
 
-
-# roscore initialization DONE
-# ros bag download and where to put it DONE
-# make sure to do chmod 777 script.sh DONE
-# instructions to install GA DONE
-# params.yaml path may need to be modified in keyframs_ba_monolid.launch file - set to dynamic path DONE
-# remove params file after one evaluation DONE
-# verify if launch file is reading parameters from params.yaml file - IMPORTANT
-# add steps to install evo package to find fitness value DONE
-# place ground truth file at proper destination /tmp/ DONE
-# delete results folder after finding fitness value\ DONE
-# install jq DONE
-# sudo apt install parallel DONE
 
 
 
