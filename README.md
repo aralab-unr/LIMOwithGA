@@ -109,10 +109,11 @@ sudo chmod 777 fitness_value_scipt.sh
        groundtruth_04.txt
        04.bag
        ```
-    3. ```shell
-       sudo python3 ga.py
+    3. Run this command to start GA:
+       ```shell
+       python3 ga.py
        ```
-* watch ga trying out different parameter values and limo traces the trajectory in rviz :)
+* watch GA trying out different parameter values and limo traces the trajectory in rviz :)
 
 ## Known issues
 * Unittest of LandmarkSelector.voxel fails with libpcl version 1.7.2 or smaller (just 4 landmarks are selected). 
