@@ -79,6 +79,11 @@ download commands file from this github and place it in /tmp directory of your s
 ```shell
 https://github.com/adarshsehgal/LIMOwithGA/blob/master/commands.txt
 ```
+* pose_check file: 
+download pose_check file from this github and place it in /tmp directory of your system
+```shell
+https://github.com/adarshsehgal/LIMOwithGA/blob/master/pose_check.py
+```
 * KITTI bag file: 
 download KITTI bag file from below link and place it in /tmp directory of your system
 ```shell
@@ -106,6 +111,7 @@ sudo chmod 777 fitness_value_scipt.sh
        ga.py
        script.sh
        commands.txt
+       pose_check.py
        groundtruth_04.txt
        04.bag
        ```
