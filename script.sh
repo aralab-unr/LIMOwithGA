@@ -17,15 +17,18 @@ cd ..
 cd ..
 catkin_make
 source devel_limo_release/setup.bash
-#gnome-terminal --tab --command="roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch;" --tab --command="rosbag play 04.bag --pause --clock;"
-#roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
 cd ..
+
+# LIMO with rosbag to generate estimate poses
 echo "Running LIMO with rosbag..."
 timeout 293 parallel < commands.txt --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
 rm -r -f catkin_workspace
+
+# check if poses dump have equal poses as in ground truth
+python3 /tmp/pose_check.py
 
 # find fitness value by using evo package and comparing with ground truth
 mkdir results
