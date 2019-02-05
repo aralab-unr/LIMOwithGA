@@ -12,6 +12,9 @@ def fitness_function(genome):
     global timesEvaluated
     timesEvaluated += 1
 
+    if os.path.isfile('/tmp/fitnesses_dump.txt'):
+        os.system("rm -f /tmp/fitnesses_dump.txt")
+
     print("Fitness function invoked "+str(timesEvaluated)+" times")
 
     #setting parameter values using genome
@@ -32,6 +35,10 @@ def fitness_function(genome):
     # read fitness value as root mean square value (rmse) from text file
     file = open('/tmp/rmse_output.txt', 'r')
     rmse = float(file.read())
+
+    print('Saving fitnesses for each evaluation')
+    with open('/tmp/fitnesses_dump.txt', 'a') as output:
+        output.write(str(timesEvaluated) + " " + str(rmse) + "\n") 
 
     os.system("rm -f /tmp/rmse_output.txt")
 
