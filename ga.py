@@ -23,17 +23,17 @@ def fitness_function(genome):
     # max_number_landmarks_near_bin in keyframe_ba_monolid.launch
     max_number_landmarks_near_bin = decode_function(genome[11:22])*1000
     if max_number_landmarks_near_bin > 999:
-        max_number_landmarks_near_bin = 999
+        max_number_landmarks_near_bin = 999.0
 
     # max_number_landmarks_middle_bin in keyframe_ba_monolid.launch
     max_number_landmarks_middle_bin = decode_function(genome[23:33])*1000
     if max_number_landmarks_middle_bin > 999:
-        max_number_landmarks_middle_bin = 999
+        max_number_landmarks_middle_bin = 999.0
 
     # max_number_landmarks_far_bin in keyframe_ba_monolid.launch
     max_number_landmarks_far_bin = decode_function(genome[34:44])*1000
     if max_number_landmarks_far_bin > 999:
-        max_number_landmarks_far_bin = 999
+        max_number_landmarks_far_bin = 999.0
 
     # shrubbery_weight in keyframe_ba_monolid.launch
     shrubbery_weight = decode_function(genome[45:55])

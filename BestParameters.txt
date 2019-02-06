@@ -37,3 +37,31 @@ outlier_rejection_quantile = 0.967
 Best rmse value : 0.7210189386176633
 outlier_rejection_quantile = 1
 =================================================
+Best rmse value : 0.9132402403237972
+outlier_rejection_quantile = 0.941
+max_number_landmarks_near_bin = 318.0
+max_number_landmarks_middle_bin = 429.0
+max_number_landmarks_far_bin = 678.0
+shrubbery_weight = 0.269
+=================================================
+Best rmse value : 0.8071709836472029
+outlier_rejection_quantile = 0.702
+max_number_landmarks_near_bin = 318.0
+max_number_landmarks_middle_bin = 347.0
+max_number_landmarks_far_bin = 472.0
+shrubbery_weight = 0.203
+=================================================
+Best rmse value : 0.7483814339185318
+outlier_rejection_quantile = 0.91
+max_number_landmarks_near_bin = 999
+max_number_landmarks_middle_bin = 318.0
+max_number_landmarks_far_bin = 230.0
+shrubbery_weight = 0.527
+=================================================
+Best rmse value : 0.6270976281807765
+outlier_rejection_quantile = 0.944
+max_number_landmarks_near_bin = 696.0
+max_number_landmarks_middle_bin = 423.0
+max_number_landmarks_far_bin = 574.0
+shrubbery_weight = 0.418
+=================================================
