@@ -12,9 +12,6 @@ def fitness_function(genome):
     global timesEvaluated
     timesEvaluated += 1
 
-    if os.path.isfile('/tmp/fitnesses_dump.txt'):
-        os.system("rm -f /tmp/fitnesses_dump.txt")
-
     print("Fitness function invoked "+str(timesEvaluated)+" times")
 
     #setting parameter values using genome
@@ -38,7 +35,7 @@ def fitness_function(genome):
 
     print('Saving fitnesses for each evaluation')
     with open('/tmp/fitnesses_dump.txt', 'a') as output:
-        output.write(str(timesEvaluated) + " " + str(rmse) + "\n") 
+        output.write("" + str(timesEvaluated) + " " + str(rmse) + "\n") 
 
     os.system("rm -f /tmp/rmse_output.txt")
 
@@ -74,6 +71,8 @@ def decode_function(genome_partial):
             prod += 2**abs(i-len(genome_partial)+1)
     return prod/1000
 
+if os.path.isfile('/tmp/fitnesses_dump.txt'):
+    os.system("rm -f /tmp/fitnesses_dump.txt")
 # Configure the algorithm:
 population_size = 30
 genome_length = 11

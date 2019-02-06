@@ -43,6 +43,7 @@ cd ..
 rm -r -f results
 
 # add other parameters to GA
+# fitnesses_dump file not created
 
 
 
