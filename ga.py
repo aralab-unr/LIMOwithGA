@@ -20,9 +20,34 @@ def fitness_function(genome):
     if out_rej_quant > 1:
         out_rej_quant = 1
 
+    # max_number_landmarks_near_bin in keyframe_ba_monolid.launch
+    max_number_landmarks_near_bin = decode_function(genome[11:22])*1000
+    if max_number_landmarks_near_bin > 999:
+        max_number_landmarks_near_bin = 999
+
+    # max_number_landmarks_middle_bin in keyframe_ba_monolid.launch
+    max_number_landmarks_middle_bin = decode_function(genome[23:33])*1000
+    if max_number_landmarks_middle_bin > 999:
+        max_number_landmarks_middle_bin = 999
+
+    # max_number_landmarks_far_bin in keyframe_ba_monolid.launch
+    max_number_landmarks_far_bin = decode_function(genome[34:44])*1000
+    if max_number_landmarks_far_bin > 999:
+        max_number_landmarks_far_bin = 999
+
+    # shrubbery_weight in keyframe_ba_monolid.launch
+    shrubbery_weight = decode_function(genome[45:55])
+    if shrubbery_weight > 1:
+        shrubbery_weight = 1
+
+
     print('Saving parameters to params.yaml...')
     with open('/tmp/params.yaml', 'w') as output:
         output.write("outlier_rejection_quantile: " + str(out_rej_quant) + "\n") 
+        output.write("max_number_landmarks_near_bin: " + str(max_number_landmarks_near_bin) + "\n") 
+        output.write("max_number_landmarks_middle_bin: " + str(max_number_landmarks_middle_bin) + "\n") 
+        output.write("max_number_landmarks_far_bin: " + str(max_number_landmarks_far_bin) + "\n") 
+        output.write("shrubbery_weight: " + str(shrubbery_weight) + "\n") 
 
     query = "./script.sh"
 
@@ -47,10 +72,10 @@ def fitness_function(genome):
         with open('/tmp/BestParameters.txt', 'a') as output:
             output.write("Best rmse value : " + str(bestrmse) + "\n")
             output.write("outlier_rejection_quantile = " + str(out_rej_quant) + "\n")
-            #output.write("Gamma = " + str(gamma) + "\n")
-            #output.write("Q_learning = " + str(Q_lr) + "\n")
-            #output.write("pi_learning = " + str(pi_lr) + "\n")
-            #output.write("random_epsilon = " + str(random_eps) + "\n")
+            output.write("max_number_landmarks_near_bin = " + str(max_number_landmarks_near_bin) + "\n")
+            output.write("max_number_landmarks_middle_bin = " + str(max_number_landmarks_middle_bin) + "\n")
+            output.write("max_number_landmarks_far_bin = " + str(max_number_landmarks_far_bin) + "\n")
+            output.write("shrubbery_weight = " + str(shrubbery_weight) + "\n")
             #output.write("noise_epsilon = " + str(noise_eps) + "\n")
             #output.write("\n")
             output.write("=================================================")
@@ -75,7 +100,7 @@ if os.path.isfile('/tmp/fitnesses_dump.txt'):
     os.system("rm -f /tmp/fitnesses_dump.txt")
 # Configure the algorithm:
 population_size = 30
-genome_length = 11
+genome_length = 55
 ga = GeneticAlgorithm(fitness_function)
 ga.generate_binary_population(size=population_size, genome_length=genome_length)
 
@@ -105,10 +130,10 @@ print("BEST CHROMOSOME IS")
 print(best_genome)
 print("It's decoded value is")
 print("outlier_rejection_quantile = " + str(decode_function(best_genome[0:10])))
-#print("Gamma = " + str(decode_function(best_genome[11:22])))
-#print("Q_learning = " + str(decode_function(best_genome[23:33])))
-#print("pi_learning = " + str(decode_function(best_genome[34:44])))
-#print("random_epsilon = " + str(decode_function(best_genome[45:55])))
+print("max_number_landmarks_near_bin = " + str(decode_function(best_genome[11:22])*1000))
+print("max_number_landmarks_middle_bin = " + str(decode_function(best_genome[23:33])*1000))
+print("max_number_landmarks_far_bin = " + str(decode_function(best_genome[34:44])*1000))
+print("shrubbery_weight = " + str(decode_function(best_genome[45:55])))
 #print("noise_epsilon = " + str(decode_function(best_genome[56:66])))
 
 # If you want, you can have a look at the population:

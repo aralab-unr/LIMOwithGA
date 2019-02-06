@@ -1,0 +1,39 @@
+Best rmse value : 0.8591014377289067
+outlier_rejection_quantile = 0.872
+=================================================
+Best rmse value : 0.734615454436662
+outlier_rejection_quantile = 0.958
+=================================================
+Best rmse value : 0.7928584510326201
+outlier_rejection_quantile = 0.733
+=================================================
+Best rmse value : 0.7556127335661854
+outlier_rejection_quantile = 0.968
+=================================================
+Best rmse value : 0.7292024016559285
+outlier_rejection_quantile = 0.968
+=================================================
+Best rmse value : 0.8511959524005309
+outlier_rejection_quantile = 0.804
+=================================================
+Best rmse value : 0.7497309762724306
+outlier_rejection_quantile = 0.695
+=================================================
+Best rmse value : 0.8930352597119975
+outlier_rejection_quantile = 0.846
+=================================================
+Best rmse value : 0.7830993952656952
+outlier_rejection_quantile = 0.968
+=================================================
+Best rmse value : 0.6915943418887305
+outlier_rejection_quantile = 1
+=================================================
+Best rmse value : 0.6652173374899191
+outlier_rejection_quantile = 1
+=================================================
+Best rmse value : 0.722059076011346
+outlier_rejection_quantile = 0.967
+=================================================
+Best rmse value : 0.7210189386176633
+outlier_rejection_quantile = 1
+=================================================
