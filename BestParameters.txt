@@ -65,3 +65,31 @@ max_number_landmarks_middle_bin = 423.0
 max_number_landmarks_far_bin = 574.0
 shrubbery_weight = 0.418
 =================================================
+Best rmse value : 0.5779267184373661
+outlier_rejection_quantile = 0.941
+max_number_landmarks_near_bin = 999
+max_number_landmarks_middle_bin = 484.0
+max_number_landmarks_far_bin = 674.0
+shrubbery_weight = 0.265
+=================================================
+Best rmse value : 0.5735006558006424
+outlier_rejection_quantile = 0.941
+max_number_landmarks_near_bin = 30.0
+max_number_landmarks_middle_bin = 941.0
+max_number_landmarks_far_bin = 618.0
+shrubbery_weight = 0.3
+=================================================
+Best rmse value : 0.5470112651493019
+outlier_rejection_quantile = 0.941
+max_number_landmarks_near_bin = 30.0
+max_number_landmarks_middle_bin = 934.0
+max_number_landmarks_far_bin = 549.0
+shrubbery_weight = 0.332
+=================================================
+Best rmse value : 0.5321685391728578
+outlier_rejection_quantile = 0.941
+max_number_landmarks_near_bin = 23.0
+max_number_landmarks_middle_bin = 35.0
+max_number_landmarks_far_bin = 517.0
+shrubbery_weight = 0.364
+=================================================
