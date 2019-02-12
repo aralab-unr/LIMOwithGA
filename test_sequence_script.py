@@ -1,9 +1,9 @@
 import os
 
-sequence_number = 01
+sequence_number = 1
 num_runs = 10
-if os.path.isfile('/tmp/testfitnesses_dump_' + sequence_number + '.txt'):
-    os.system("rm -f /tmp/testfitnesses_dump_" + sequence_number + ".txt")
+if os.path.isfile('/tmp/testfitnesses_dump_' + str(sequence_number) + '.txt'):
+    os.system("rm -f /tmp/testfitnesses_dump_" + str(sequence_number) + ".txt")
 
 for x in range(1, num_runs):
     query = "./test_script.sh"
@@ -14,7 +14,7 @@ for x in range(1, num_runs):
     rmse = float(file.read())
 
     print('Saving fitnesses for each evaluation')
-    with open('/tmp/testfitnesses_dump_' + sequence_number + '.txt', 'a') as output:
+    with open('/tmp/testfitnesses_dump_' + str(sequence_number) + '.txt', 'a') as output:
         output.write("" + str(x) + " " + str(rmse) + "\n") 
 
     os.system("rm -f /tmp/rmse_output.txt")
