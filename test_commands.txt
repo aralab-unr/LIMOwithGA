@@ -1,0 +1,2 @@
+roslaunch demo_keyframe_bundle_adjustment_meta kitti_standalone.launch
+rosbag play 01.bag -r 0.1 --clock
