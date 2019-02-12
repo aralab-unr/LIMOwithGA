@@ -15,7 +15,7 @@ for x in range(1, num_runs):
 
     print('Saving fitnesses for each evaluation')
     with open('/tmp/testfitnesses_dump_' + sequence_number + '.txt', 'a') as output:
-        output.write("" + str(timesEvaluated) + " " + str(rmse) + "\n") 
+        output.write("" + str(x) + " " + str(rmse) + "\n") 
 
     os.system("rm -f /tmp/rmse_output.txt")
 
