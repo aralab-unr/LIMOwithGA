@@ -1,6 +1,6 @@
 import os
 
-sequence_number = 1
+sequence_number = 4
 num_runs = 10
 if os.path.isfile('/tmp/testfitnesses_dump_' + str(sequence_number) + '.txt'):
     os.system("rm -f /tmp/testfitnesses_dump_" + str(sequence_number) + ".txt")

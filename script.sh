@@ -21,7 +21,9 @@ cd ..
 
 # LIMO with rosbag to generate estimate poses
 echo "Running LIMO with rosbag..."
-timeout 293 parallel < commands.txt --no-notice 
+# 1142 - sequence 01
+# 293 - sequence 04
+timeout 1142 parallel < commands.txt --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
@@ -32,7 +34,7 @@ python3 /tmp/pose_check.py
 
 # find fitness value by using evo package and comparing with ground truth
 mkdir results
-evo_ape kitti groundtruth_04.txt poses_dump.txt -va --plot_mode xz --save_results results/fitness.zip
+evo_ape kitti groundtruth_01.txt poses_dump.txt -va --plot_mode xz --save_results results/fitness.zip
 cd results
 unzip fitness.zip -d fitness
 cd fitness

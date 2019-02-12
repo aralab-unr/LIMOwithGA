@@ -99,7 +99,7 @@ def decode_function(genome_partial):
 if os.path.isfile('/tmp/fitnesses_dump.txt'):
     os.system("rm -f /tmp/fitnesses_dump.txt")
 # Configure the algorithm:
-population_size = 30
+population_size = 50
 genome_length = 55
 ga = GeneticAlgorithm(fitness_function)
 ga.generate_binary_population(size=population_size, genome_length=genome_length)
@@ -122,13 +122,15 @@ ga.single_point_cross_over = False # default False
 # You can call the method several times and adjust some parameters
 # (e.g. number_of_pairs, selective_pressure, mutation_rate,
 # allow_random_parent, single_point_cross_over)
-ga.run(30) # default 1000
+ga.run(50) # default 1000
 
 best_genome, best_fitness = ga.get_best_genome()
 
+print("BEST FITNESS IS")
+print(best_fitness)
 print("BEST CHROMOSOME IS")
 print(best_genome)
-print("It's decoded value is")
+print("It's decoded value is:")
 print("outlier_rejection_quantile = " + str(decode_function(best_genome[0:10])))
 print("max_number_landmarks_near_bin = " + str(decode_function(best_genome[11:22])*1000))
 print("max_number_landmarks_middle_bin = " + str(decode_function(best_genome[23:33])*1000))

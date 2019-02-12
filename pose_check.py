@@ -1,8 +1,10 @@
 import os
 
 num_lines = sum(1 for line in open('/tmp/poses_dump.txt'))
-if num_lines > 268:
-    print("modifying poses dump to 268 poses")
+# 1098 - sequence 01
+# 268 - sequence 04
+if num_lines > 1098:
+    print("modifying poses dump to 1098 poses")
     file = open('/tmp/poses_dump.txt', "r+", encoding = "utf-8")
 
     #Move the pointer (similar to a cursor in a text editor) to the end of the file. 
