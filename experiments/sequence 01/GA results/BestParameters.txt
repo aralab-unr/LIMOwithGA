@@ -1,0 +1,63 @@
+Best rmse value : 80.68591391674099
+outlier_rejection_quantile = 0.544
+max_number_landmarks_near_bin = 328.0
+max_number_landmarks_middle_bin = 345.0
+max_number_landmarks_far_bin = 712.0
+shrubbery_weight = 0.939
+=================================================
+Best rmse value : 59.64234824711389
+outlier_rejection_quantile = 0.995
+max_number_landmarks_near_bin = 999.0
+max_number_landmarks_middle_bin = 106.0
+max_number_landmarks_far_bin = 650.0
+shrubbery_weight = 0.649
+=================================================
+Best rmse value : 54.2371883217513
+outlier_rejection_quantile = 1
+max_number_landmarks_near_bin = 999.0
+max_number_landmarks_middle_bin = 446.0
+max_number_landmarks_far_bin = 823.0
+shrubbery_weight = 0.819
+=================================================
+Best rmse value : 48.54214464905053
+outlier_rejection_quantile = 0.823
+max_number_landmarks_near_bin = 318.0
+max_number_landmarks_middle_bin = 714.0
+max_number_landmarks_far_bin = 109.0
+shrubbery_weight = 0.644
+=================================================
+Best rmse value : 37.298783110539816
+outlier_rejection_quantile = 0.717
+max_number_landmarks_near_bin = 880.0
+max_number_landmarks_middle_bin = 944.0
+max_number_landmarks_far_bin = 409.0
+shrubbery_weight = 0.332
+=================================================
+Best rmse value : 4.882802668974237
+outlier_rejection_quantile = 0.929
+max_number_landmarks_near_bin = 999.0
+max_number_landmarks_middle_bin = 33.0
+max_number_landmarks_far_bin = 581.0
+shrubbery_weight = 0.049
+=================================================
+Best rmse value : 4.271513079555017
+outlier_rejection_quantile = 0.958
+max_number_landmarks_near_bin = 999.0
+max_number_landmarks_middle_bin = 851.0
+max_number_landmarks_far_bin = 767.0
+shrubbery_weight = 0.569
+=================================================
+Best rmse value : 3.8783254550796253
+outlier_rejection_quantile = 0.956
+max_number_landmarks_near_bin = 999.0
+max_number_landmarks_middle_bin = 578.0
+max_number_landmarks_far_bin = 943.0
+shrubbery_weight = 0.798
+=================================================
+Best rmse value : 3.7102823025090643
+outlier_rejection_quantile = 0.958
+max_number_landmarks_near_bin = 999.0
+max_number_landmarks_middle_bin = 593.0
+max_number_landmarks_far_bin = 877.0
+shrubbery_weight = 0.813
+=================================================
