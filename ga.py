@@ -56,19 +56,27 @@ def fitness_function(genome):
 
     # read fitness value as root mean square value (rmse) from text file
     file = open('/tmp/rmse_output.txt', 'r')
-    rmse = float(file.read())
+    rmse1 = float(file.read())
+
+    file = open('/tmp/rmse_output2.txt', 'r')
+    rmse2 = float(file.read())
+
+    # Average of two RMSE values
+    rmse_avg = rmse1 + rmse2
+    rmse_avg = rmse_avg/2
 
     print('Saving fitnesses for each evaluation')
     with open('/tmp/fitnesses_dump.txt', 'a') as output:
-        output.write("" + str(timesEvaluated) + " " + str(rmse) + "\n") 
+        output.write("" + str(timesEvaluated) + " " + str(rmse1) + " " + str(rmse2) + " " + str(rmse_avg) + "\n") 
 
     os.system("rm -f /tmp/rmse_output.txt")
+    os.system("rm -f /tmp/rmse_output2.txt")
 
     global bestrmse
     if bestrmse == -1:
-        bestrmse = rmse
-    if rmse < bestrmse:
-        bestrmse = rmse
+        bestrmse = rmse_avg
+    if rmse_avg < bestrmse:
+        bestrmse = rmse_avg
         with open('/tmp/BestParameters.txt', 'a') as output:
             output.write("Best rmse value : " + str(bestrmse) + "\n")
             output.write("outlier_rejection_quantile = " + str(out_rej_quant) + "\n")
@@ -76,15 +84,13 @@ def fitness_function(genome):
             output.write("max_number_landmarks_middle_bin = " + str(max_number_landmarks_middle_bin) + "\n")
             output.write("max_number_landmarks_far_bin = " + str(max_number_landmarks_far_bin) + "\n")
             output.write("shrubbery_weight = " + str(shrubbery_weight) + "\n")
-            #output.write("noise_epsilon = " + str(noise_eps) + "\n")
-            #output.write("\n")
             output.write("=================================================")
             output.write("\n")
 
-    print('rmse for this run:' + str(rmse))
+    print('Average rmse for this run:' + str(rmse_avg))
 
     print("Best rmse so far : "+str(bestrmse))
-    return 1/rmse
+    return 1/rmse_avg
 
 def decode_function(genome_partial):
 
