@@ -55,7 +55,7 @@ def fitness_function(genome):
     os.system(query)     
 
     # read fitness value as root mean square value (rmse) from text file
-    file = open('/tmp/rmse_output.txt', 'r')
+    file = open('/tmp/rmse_output1.txt', 'r')
     rmse1 = float(file.read())
 
     file = open('/tmp/rmse_output2.txt', 'r')
@@ -69,7 +69,7 @@ def fitness_function(genome):
     with open('/tmp/fitnesses_dump.txt', 'a') as output:
         output.write("" + str(timesEvaluated) + " " + str(rmse1) + " " + str(rmse2) + " " + str(rmse_avg) + "\n") 
 
-    os.system("rm -f /tmp/rmse_output.txt")
+    os.system("rm -f /tmp/rmse_output1.txt")
     os.system("rm -f /tmp/rmse_output2.txt")
 
     global bestrmse
