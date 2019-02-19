@@ -23,7 +23,7 @@ cd ..
 echo "Running LIMO with first rosbag..."
 # 1142 - sequence 01
 # 293 - sequence 04
-timeout 1142 parallel < commands.txt --no-notice 
+parallel < commands.txt --timeout 1142 --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
@@ -68,7 +68,7 @@ cd ..
 echo "Running LIMO with second rosbag..."
 # 1142 - sequence 01
 # 293 - sequence 04
-timeout 293 parallel < commands2.txt --no-notice 
+parallel < commands2.txt --timeout 293 --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
