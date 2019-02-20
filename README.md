@@ -107,7 +107,8 @@ sudo chmod 777 fitness_value_scipt.sh
 
 ### Run
 * Follow these steps:
-    1. Download only below files to your computer to run the code, rest is taken care:
+    1. Open `roscore`
+    2. Download only below files to your computer to run the code, rest is taken care:
 	```shell
        ga.py
        script.sh
@@ -118,7 +119,7 @@ sudo chmod 777 fitness_value_scipt.sh
        groundtruth_04.txt
        04.bag
        ```
-    2. Run this command to start GA:
+    3. Run this command to start GA:
        ```shell
        python3 ga.py
        ```
