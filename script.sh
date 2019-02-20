@@ -23,7 +23,7 @@ cd ..
 echo "Running LIMO with first rosbag..."
 # 1142 - sequence 01
 # 293 - sequence 04
-parallel < commands2.txt --timeout 293 --no-notice 
+timeout -k 293s 1s parallel < commands2.txt --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
@@ -46,22 +46,21 @@ rm -r -f results
 
 # Running LIMO with second rosbag
 
-#cd /tmp
-#mkdir catkin_workspace
-#cd catkin_workspace
-#mkdir src
-#catkin_make
-#mkdir logs
-#catkin init
-#cd src
-#git clone https://github.com/adarshsehgal/LIMOwithGA
-#mv LIMOwithGA limo
-#cd limo
-#bash install_repos.sh
-#cd ..
-#cd ..
-#catkin_make
-cd /tmp/catkin_workspace
+cd /tmp
+mkdir catkin_workspace
+cd catkin_workspace
+mkdir src
+catkin_make
+mkdir logs
+catkin init
+cd src
+git clone https://github.com/adarshsehgal/LIMOwithGA
+mv LIMOwithGA limo
+cd limo
+bash install_repos.sh
+cd ..
+cd ..
+catkin_make
 source devel_limo_release/setup.bash
 cd ..
 
@@ -69,7 +68,7 @@ cd ..
 echo "Running LIMO with second rosbag..."
 # 1142 - sequence 01
 # 293 - sequence 04
-parallel < commands.txt --timeout 1142 --no-notice 
+timeout -k 1142s 1s 1142s parallel < commands.txt --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
