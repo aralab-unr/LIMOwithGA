@@ -2,8 +2,8 @@
 
 # make a new ROS workspace to test the parameters
 cd /tmp
-mkdir catkin_workspace
-cd catkin_workspace
+mkdir catkin
+cd catkin
 mkdir src
 catkin_make
 mkdir logs
@@ -23,11 +23,11 @@ cd ..
 echo "Running LIMO with first rosbag..."
 # 1142 - sequence 01
 # 293 - sequence 04
-timeout -k 293s 1s parallel < commands2.txt --no-notice 
+timeout -k 1142 1 parallel < commands2.txt --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
-rm -r -f catkin_workspace
+rm -r -f catkin
 
 # check if poses dump have equal poses as in ground truth
 python3 /tmp/pose_check2.py
@@ -47,8 +47,8 @@ rm -r -f results
 # Running LIMO with second rosbag
 
 cd /tmp
-mkdir catkin_workspace
-cd catkin_workspace
+mkdir catkin
+cd catkin
 mkdir src
 catkin_make
 mkdir logs
@@ -68,11 +68,11 @@ cd ..
 echo "Running LIMO with second rosbag..."
 # 1142 - sequence 01
 # 293 - sequence 04
-timeout -k 1142s 1s parallel < commands.txt --no-notice 
+timeout -k 293 1 parallel < commands.txt --no-notice 
 
 # delete workspace after this iteration is done
 cd /tmp
-rm -r -f catkin_workspace
+rm -r -f catkin
 
 # check if poses dump have equal poses as in ground truth
 python3 /tmp/pose_check.py
