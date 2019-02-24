@@ -44,6 +44,7 @@
   <arg name="tracklets_subscriber_topic" value="/matches/grayscale/left/with_label"/>
    <arg name="prior_vehicle_frame" value=""/>
   </include>
+  <include file="$(find demo_keyframe_bundle_adjustment_meta)/launch/remap.launch"></include>
   <!-- play rosbag -->
   <!-- /mrtstorage/datasets/kitti/odometry/odometry_rosbags/gray/00.bag"-->
 
