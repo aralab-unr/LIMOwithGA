@@ -72,24 +72,26 @@ https://github.com/chovanecm/python-genetic-algorithm
 * groundtruth file: 
 download groundtruth pose file from this github and place it in /tmp directory of your system
 ```shell
-https://github.com/adarshsehgal/LIMOwithGA/blob/master/groundtruth_04.txt
+https://github.com/aralab-unr/LIMOwithGA/blob/master/groundtruth_04.txt
+https://github.com/aralab-unr/LIMOwithGA/blob/master/groundtruth_01.txt
 ```
 * commands file: 
 download commands and commands2 files from this github and place it in /tmp directory of your system
 ```shell
-https://github.com/adarshsehgal/LIMOwithGA/blob/master/commands.txt
-https://github.com/adarshsehgal/LIMOwithGA/blob/master/commands2.txt
+https://github.com/aralab-unr/LIMOwithGA/blob/master/commands.txt
+https://github.com/aralab-unr/LIMOwithGA/blob/master/commands2.txt
 ```
 * pose_check file: 
 download pose_check and pose_check2 files from this github and place it in /tmp directory of your system
 ```shell
-https://github.com/adarshsehgal/LIMOwithGA/blob/master/pose_check.py
-https://github.com/adarshsehgal/LIMOwithGA/blob/master/pose_check2.py
+https://github.com/aralab-unr/LIMOwithGA/blob/master/pose_check.py
+https://github.com/aralab-unr/LIMOwithGA/blob/master/pose_check2.py
 ```
 * KITTI bag file: 
 download KITTI bag file from below link and place it in /tmp directory of your system
 ```shell
 https://www.mrt.kit.edu/graeterweb/04.bag
+https://www.mrt.kit.edu/graeterweb/01.bag
 ```
 * install evo package: 
 ```shell
@@ -117,7 +119,9 @@ sudo chmod 777 fitness_value_scipt.sh
        pose_check.py
        pose_check2.py
        groundtruth_04.txt
+       groundtruth_01.txt
        04.bag
+       01.bag
        ```
     3. Run this command to start GA:
        ```shell
