@@ -9,7 +9,7 @@ catkin_make
 mkdir logs
 catkin init
 cd src
-git clone https://github.com/adarshsehgal/LIMOwithGA
+git clone https://github.com/aralab-unr/LIMOwithGA
 mv LIMOwithGA limo
 cd limo
 bash install_repos.sh
